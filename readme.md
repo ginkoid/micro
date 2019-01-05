@@ -14,11 +14,11 @@ To use micro, you'll need [a Backblaze account](https://www.backblaze.com/b2/sig
 
 * Create a bucket. Give it a name, and make it public.
 * Upload a file to your bucket. The name and content does not matter.
-* Click on your new file, and save the Friendly URL
-* Delete your file
+* Click on your new file, and save the Friendly URL.
+* Delete your file.
 * Create an application key, and give it access only to the bucket you just created. It should have read and write access, and should be able to access files prefixed with `m/`.
-* Copy your key value, key ID, bucket ID, bucket name, and public file origin (it should be the Friendly URL, but replace the file name with `m`) into a file in your home directory named `.micro-env`. A template is in `.micro-env.example`
-* Download the latest release of micro for your OS, and run it
+* Copy your key value, key ID, bucket ID, bucket name, and public file origin (it should be the Friendly URL, but replace the file name with `m`) into a file in your home directory named `.micro-env`. A template is in `.micro-env.example`.
+* Download the [latest release of micro for your OS](https://github.com/ginkoid/micro/releases), and run it.
 
 ## developing
 
