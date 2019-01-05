@@ -1,0 +1,21 @@
+{
+  "name": "micro",
+  "version": "0.0.0",
+  "bin": "src/up.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "pkg . --out-path dist"
+  },
+  "dependencies": {
+    "base-x": "^3.0.5",
+    "chalk": "^2.4.2",
+    "dotenv": "^6.2.0",
+    "mime": "^2.4.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "pkg": "^4.3.5"
+  }
+}
