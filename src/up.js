@@ -1,10 +1,12 @@
+'use strict'
+
+const os = require('os')
 const dotenv = require('dotenv')
 dotenv.config({
-  path: '~/.micro-env'
+  path: os.homedir() + '/.micro-env'
 })
 const fs = require('fs')
 const crypto = require('crypto')
-const baseX = require('base-x')
 const mime = require('mime')
 const chalk = require('chalk')
 const makeReq = require('./req')
@@ -20,9 +22,7 @@ const bucketPrefix = 'm/'
 
 const encodeBase64Url = (buf) => {
   const base64 = buf.toString('base64')
-  base64.replace(/\+/g, '-')
-  base64.replace(/\//g, '_')
-  return base64
+  return base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '')
 }
 
 ;(async () => {
@@ -31,7 +31,7 @@ const encodeBase64Url = (buf) => {
   const filePath = process.argv[2]
 
   if (filePath === undefined || filePath === '') {
-    console.log('help:\nmicro /path/to/file/to/upload')
+    console.log('help:\n  micro /path/to/file/to/upload')
     return
   }
 
@@ -50,7 +50,7 @@ const encodeBase64Url = (buf) => {
   const extensionFileMime = mime.getType(filePath)
 
   const logUploadResult = (exists) => console.log(chalk`${exists
-    ? 'file already exists'
+    ? chalk`{green file already exists}`
     : chalk`{green uploaded!}`}
 path:  {cyan ${process.env.MICRO_B2_BUCKET_NAME}/${bucketPrefix}${fileMd5Hash}}
 size:  {cyan ${fileContents.length} bytes}

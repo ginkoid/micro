@@ -8,7 +8,6 @@
     "build": "pkg . --out-path dist"
   },
   "dependencies": {
-    "base-x": "^3.0.5",
     "chalk": "^2.4.2",
     "dotenv": "^6.2.0",
     "mime": "^2.4.0",
